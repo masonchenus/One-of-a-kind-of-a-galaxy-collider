@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from the visualization */
+    font-family: Arial, sans-serif;
+    background-color: #000;
+}
+
+#ui-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 15px;
+    background: rgba(20, 20, 40, 0.9); /* Dark, semi-transparent background */
+    color: #FFF;
+    border-radius: 8px;
+    z-index: 10; /* Ensure it's above the WebGL canvas */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+label, input, select, button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+/* **The "Diamond Sky" Visual** */
+/* In Three.js, this is achieved by using a high-intensity PointMaterial for the stars. */
+/* The CSS only handles the background color for the overall look. */
