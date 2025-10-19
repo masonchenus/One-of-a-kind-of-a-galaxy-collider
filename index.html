@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Collision Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui-container">
+        <h3>Simulation Parameters</h3>
+        <label for="inclination">Galaxy 2 Inclination (deg):</label>
+        <input type="range" id="inclination" min="0" max="180" value="45"><span id="inc-val">45</span>
+        
+        <label for="orbit">Orbital Initial Setup:</label>
+        <input type="checkbox" id="orbit" checked>
+        
+        <label for="timestep">Time Step (Years/Sec):</label>
+        <select id="timestep">
+            <option value="1000000">1 Million</option>
+            <option value="1000000000" selected>1 Billion</option>
+        </select>
+        
+        <div class="controls">
+            <button id="pause-btn">⏸️ Pause</button>
+            <button id="step-fwd-btn">+1B Years</button>
+            <button id="step-back-btn">-1B Years</button>
+        </div>
+        
+        <label for="vantage">Vantage Point:</label>
+        <select id="vantage">
+            <option value="earth">Earth (Milky Way Point)</option>
+            <option value="outside">External 3D Data</option>
+        </select>
+        
+        <p>Use **Arrow Keys** to look around in Earth View!</p>
+        <p>Current Time: <span id="sim-time">0</span> Billion Years</p>
+    </div>
+
+    <div id="visualization"></div> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <script src="Galaxy.js"></script>
+    <script src="PhysicsEngine.js"></script>
+    <script src="main.js"></script> 
+</body>
+</html>
